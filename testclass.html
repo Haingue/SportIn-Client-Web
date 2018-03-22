@@ -1,0 +1,38 @@
+
+
+
+
+
+
+
+
+<div id=acceuil>
+
+<div id=gauche>
+<h2 id=Evenements>Evenements</h2>
+<h2 id=MesEvenements>Mes Evenements
+<h2 id=MonProfil>Mon profil</h2>
+<h2 id=Messages>Messages</h2>
+
+</div>
+</div>
+
+<script>  
+
+$('#newbook').click(function (event) {
+  $.ajax({
+    url: "",
+    data: {
+        mail: 
+    },
+
+    type: "POST",
+    dataType : "json",
+    // Code to run if the request succeeds;
+    // the response is passed to the function
+    success: function( json ) {
+        $( "<h1>" ).text( json.title ).appendTo( "body" );
+        $( "<div class=\"content\">").html( json.html ).appendTo( "body" );
+    },
+
+</script>
