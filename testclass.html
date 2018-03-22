@@ -1,38 +1,56 @@
+<!DOCTYPE html>
+<html lang=fr>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<script src='./lib/jquery-3.3.1.js'></script>
+<div id=Accueil>
+	<div id=Menu>
+
+		<img id=logo2 src="Images/Sport-In LogoB.png"/>
+		<input id=profil type=button value="Mon Profil">
+		<input id=programme type=button value="Mon Programme">
+		<input id=eventdispo type=button value="Rencontres sportives">
+		<input id=settings type=button value="Reglages">
+	</div>
+	<div id=switch>
+			<div id= titre1>Mon profil
+				
+			</div>
+			<div id= titre2>Mon Programme<input id=creerevent1 type=button value="Creer un evenement +"/>
+				
+			</div>	
+			<div id= titre3>Rencontres Sportives<input id=creerevent2 type=button value="Creer un evenement +"/>
+
+			</div>	
+			<div id= titre4>Réglages
+
+			</div>		
+	</div>
+	<div id=creerevent>
+		ICI BIENTOT LE FORMULAIRE DE CREATION D EVENEMENT
+	</div>
+	<div id=eventboard>
+		ICI SERA AFFICHE TOUS LES EVENEMENTS
+	</div>
+	<div id=pageprofil>
+		<input type=text readonly="readonly" div=nom value="NOM">
+		<input type=text readonly="readonly" div=prenom value="PRENOM">
+		<input type=text readonly="readonly" div=job value="JOB">
+		<input type=text readonly="readonly" div=entreprise value="ENTREPRISE">
+		<input div=linkdin type=text placeholder="Liez votre profil Linkdin">
+		<input div=uploadlinkd type=button value="Upload">
+	</div>
+	<div id=pagereglage>
+		ICI LES SETTINGS
+	</div>
 
 
-
-
-
-
-
-
-<div id=acceuil>
-
-<div id=gauche>
-<h2 id=Evenements>Evenements</h2>
-<h2 id=MesEvenements>Mes Evenements
-<h2 id=MonProfil>Mon profil</h2>
-<h2 id=Messages>Messages</h2>
-
+<script src="./src/Accueil.js"></script>
 </div>
-</div>
 
-<script>  
 
-$('#newbook').click(function (event) {
-  $.ajax({
-    url: "",
-    data: {
-        mail: 
-    },
-
-    type: "POST",
-    dataType : "json",
-    // Code to run if the request succeeds;
-    // the response is passed to the function
-    success: function( json ) {
-        $( "<h1>" ).text( json.title ).appendTo( "body" );
-        $( "<div class=\"content\">").html( json.html ).appendTo( "body" );
-    },
-
-</script>
+</body>
+</html>
