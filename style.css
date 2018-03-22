@@ -1,20 +1,18 @@
 /*#page1{
 	position:absolute;
 }*/
+
 h2{
 text-align:center;
 color:rgb(55,55,55);
 font-family:Droid Sans,Myriad Pro;
 }
 
-#premierh2
-{
+#premierh2{
 margin-top:80px;
 }
 
-#logo
-{
-
+#logo{
 margin-left: auto;
 margin-right: auto;
 display:block;
@@ -84,19 +82,61 @@ width:auto;
 	float:left;
 	position:absolute;
 	display:block;
-	background-color:rgb(210,10,65);
+	width:150px;
+	background-color:rgb(59,56,56);
+	padding-top: 25px;
 	
 }
-#profil,#events,#settings{
-	margin-bottom:50px;
+
+#logo2{
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 10px;
+display:block;
+width:auto;
+
+}
+#profil,#events,#settings,#eventdispo,#programme{
+	margin-bottom:30px;
 	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
+	color:white;
+	background-color:rgb(59,56,56);
+	border-radius:1em;
+	width:100%;
+	display:block;
+	
+}
+#switch{
+	position: absolute;
+	top: 0; 
+	left: 150px;
+	display: inline-block;
+    vertical-align: top;
+	width:auto;
+	background-color:white;
+}
+#titre1,#titre2,#titre3,#titre4{
+	font-size:30px;
+	padding-left:10px;
+}
+#creerevent,#eventboard,#pageprofil,#pagereglage{
+	margin-left:150px;
+	margin-top: 35px;
+	/*text-align:center;*/
+	margin-right: auto;
+	display:block;
+	float:none;
+}
+#creerevent1,#creerevent2,#uploadlinkd{
+	margin-left:20px;
 	margin-right: auto;
 	text-align:center;
 	color:white;
 	background-color:rgb(210,10,65);
 	border-radius:1em;
 	width:auto;
-	display:block;
 }
 
 
