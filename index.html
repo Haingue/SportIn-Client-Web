@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang=fr>
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+    <div id=decor>
+      <img id=bordgauche src="Images/imageCourse.jpg">
+      <img id=borddroit src="Images/imageCourse.jpg">
+    </div>
+    <script src='./lib/jquery-3.3.1.js'></script>
+
+    <div id = page1>
+      <img id=logo src="Images/Sport-In Logo.png"/>
+      <h2 id=premierh2>Le networking par le sport</h2>
+      <h2>Le networking pour le sport</h2>
+      <input type=button id="enregistrer" value="S'enregistrer" >
+      <input type=button id="identifier" value="S'identifier">
+    </div>
+
+
+
+    <!--  Div de la page d'identification de l'utilisateur   -->
+    <div id=pageIdentifier >
+      <img id=logo src="Images/Sport-In Logo.png"/>
+      <form id=formI>
+	<input type="text" id="Inom" placeholder="Votre email"/>
+	<input type="password" id="Imdp" placeholder="Votre mot de passe "/>
+      </form>
+      <p id=reponse>reponse: </p>
+      <input type=button id=confirmerI  value="C'est parti">
+      <a href="" id=rI>Retour</a>
+    </div>
+
+    <!--  Div de la page d'enregistrement d'un utilisateur   -->
+    <div id=pageEnregistrer >
+      <img id=logo src="Images/Sport-In Logo.png"/>
+      <form id=formE>
+		<input type="text" id="Enom" placeholder="Votre email"/>
+		<input type="text" id="nom" placeholder="Votre nom"/>
+		<input type="text" id="prenom" placeholder="Votre prénom"/>
+		<input type="pass" id="Emdp" placeholder="Votre mot de passe"/>
+      </form>
+      <input type=button id=confirmerE  value="C'est parti !">
+      <a href="" id=rE>Retour</a>
+    </div>
+
+    <div id=Accueil>
+		<div id=Menu>
+			<img id=logo2 src="Images/Sport-In LogoB.png"/>
+			<input id=profil type=button value="Mon Profil">
+			<input id=programme type=button value="Mon Programme">
+			<input id=eventdispo type=button value="Rencontres sportives">
+			<input id=settings type=button value="Reglages">
+		</div>
+	<div id=switch>
+		<div id= titre1>Mon profil
+				
+		</div>
+		<div id= titre2>Mon Programme<input id=creerevent1 type=button value="Creer un evenement +"/>
+				
+		</div>	
+		<div id= titre3>Rencontres Sportives<input id=creerevent2 type=button value="Creer un evenement +"/>
+
+		</div>	
+		<div id= titre4>Réglages
+
+		</div>		
+	</div>
+	<div id=creerevent>
+		ICI BIENTOT LE FORMULAIRE DE CREATION D EVENEMENT
+	</div>
+	<div id=eventboard>
+		ICI SERA AFFICHE TOUS LES EVENEMENTS
+	</div>
+	<div id=pageprofil>
+		<input type=text readonly="readonly" div=nom value="NOM">
+		<input type=text readonly="readonly" div=prenom value="PRENOM">
+		<input type=text readonly="readonly" div=job value="JOB">
+		<input type=text readonly="readonly" div=entreprise value="ENTREPRISE">
+		<input div=linkdin type=text placeholder="Liez votre profil Linkdin">
+		<input div=uploadlinkd type=button value="Upload">
+	</div>
+	<div id=pagereglage>
+		ICI LES SETTINGS
+	</div>
+
+</div>
+
+
+
+
+     <script src="./src/Accueil.js"></script>
+    <script src="./src/page1.js"></script>
+    <script src="./src/all.js"></script>
+  </body>
+</html>
+

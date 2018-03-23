@@ -1,36 +1,122 @@
-	$(document).ready(function(){
-	$("#pageEnregistrer").hide();	
-	$("#pageIdentifier").hide();
-	$("#confirmer").hide();
-	
+$(document).ready(function(){
+    $("#pageEnregistrer").hide();	
+    $("#pageIdentifier").hide();
+    $("#confirmer").hide();
+    $("#Accueil").hide();
+
+
+    // TRANSITION PAGE ENREGISTREMENT
     $("#enregistrer").click(function(){
-		$("#page1").hide();
-		$("#pageEnregistrer").show();				
+	$("#page1").hide();
+	$("#pageEnregistrer").show();
+    });
+
+    // TRANSITION PAGE IDENTIFICATION
+    $("#identifier").click(function(){
+	$("#page1").hide();
+     $("#Acceuil").hide();
+	$("#pageIdentifier").show();			
+    });
+
+
+    
+    // Inscription
+    $("#confirmerE").click(function(){
+	postUser(
+            $('#nom').val(),
+            $('#prenom').val(),
+            $('#Enom').val(),
+            $('#Emdp').val())
 	});
 	
-	$("#identifier").click(function(){
-		$("#page1").hide();
-		$("#pageIdentifier").show();			
-	});
-
-	$('#confimerE').click(function (event) {
-  	$.ajax({
-    url: "",
-    data: {
-        mail: 
-    },
-
-    type: "POST",
-    dataType : "json",
-    // Code to run if the request succeeds;
-    // the response is passed to the function
-    success: function( json ) {
-        $( "<h1>" ).text( json.title ).appendTo( "body" );
-        $( "<div class=\"content\">").html( json.html ).appendTo( "body" );
-    },
-
-
-
-	});
-  
+	// Identification
+	$("#confirmerI").click(function(){
+		login();
+    $("#Accueil").show();
+    $("#switch").show();
+    $("#titre3").show();
+    $("#eventboard").show();
+    $("#Menu").show();
+    $("#logo2").show();
+    $("#profil").show();
+    $("#programme").show();
+    $("#eventdispo").show();
+    $("#settings").show();
     
+
+    $("#bordgauche").hide();
+    $("#borddroit").hide();
+    $("#pageEnregistrer").hide();   
+    $("#pageIdentifier").hide();
+    $("#confirmer").hide();
+    $("#profilpage").hide();
+    $("#titre1").hide();
+    $("#titre2").hide();
+    $("#titre4").hide();
+    $("#creerevent").hide();
+    $("#pageprofil").hide();
+    $("#pagereglage").hide();
+
+	});
+    $("#profil").click(function(){
+        $("#titre1").show();
+        $("#titre2").hide();
+        $("#titre3").hide();
+        $("#titre4").hide();
+        $("#eventboard").hide();
+        $("#creerevent").hide();
+        $("#pageprofil").show();
+        $("#pagereglage").hide();           
+    });
+    $("#programme").click(function(){
+        $("#titre1").hide();
+        $("#titre2").show();
+        $("#titre3").hide();
+        $("#titre4").hide();
+        $("#eventboard").show();
+        $("#creerevent").hide();
+        $("#pageprofil").hide();
+        $("#pagereglage").hide();       
+    });
+    $("#eventdispo").click(function(){
+        $("#titre1").hide();
+        $("#titre2").hide();
+        $("#titre3").show();
+        $("#titre4").hide();
+        $("#eventboard").show();
+        $("#creerevent").hide();
+        $("#pageprofil").hide();
+        $("#pagereglage").hide();       
+    });
+    $("#settings").click(function(){
+        $("#titre1").hide();
+        $("#titre2").hide();
+        $("#titre3").hide();
+        $("#titre4").show();
+        $("#eventboard").hide();
+        $("#creerevent").hide();
+        $("#pageprofil").hide();
+        $("#pagereglage").show();   
+    });
+    $("#creerevent1").click(function(){
+        $("#pageprofil").hide();
+        $("#pagereglage").hide();
+        $("#eventboard").hide();
+        $("#creerevent").show();
+    });
+    $("#creerevent2").click(function(){
+        $("#pageprofil").hide();
+        $("#pagereglage").hide();
+        $("#eventboard").hide();
+        $("#creerevent").show();
+    });
+    $("#uploadlinkd").click(function(){
+        
+    });
+	
+
+
+});
+
+
+
