@@ -1,5 +1,5 @@
 function getUser(name) {
-	getUserGeneric(name, "v1/tempo/user/");
+	getUserGeneric(name, "v1/user/");
 }
 
 function getUserGeneric(name, url) {
@@ -9,7 +9,7 @@ function getUserGeneric(name, url) {
 }
 
 function login() {
-	getWithAuthorizationHeader("v1/tempo/user", function(data){
+	getWithAuthorizationHeader("v1/login", function(data){
 	    //$("#login_form").hide();
 	    afficheUser(data);
 	});
@@ -20,16 +20,37 @@ function profile() {
 }
 
  function getWithAuthorizationHeader(url, callback) {
- if($("#Enom").val() != "") {
+ if($("#userlogin").val() != "") {
      $.ajax
      ({
        type: "GET",
        url: url,
        dataType: 'json',
        beforeSend : function(req) {
-        req.setRequestHeader("Authorization", "Basic " + btoa($("#Enom").val() + ":" + $("#Emdp").val()));
+        req.setRequestHeader("Authorization", "Basic " + btoa($("#userlogin").val() + ":" + $("#passwdlogin").val()));
        },
-       success: callback,
+       success: function(){
+      
+       	$("#pageIdentifier").hide();
+       	$("#pageEnregistrer").hide();	
+    	$("#confirmer").hide();
+    	$("#logo").hide();
+    	$("#bordgauche").hide();
+    	$("#borddroit").hide();
+    	$("#Accueil").show();
+    	$("#Menu").show();
+    	$("#switch").show();
+    	$("#logo2").show();
+    	$("#profil").show();
+    	$("#programme").show();
+    	$("#eventdispo").show();
+    	$("#settings").show();
+    	listerEvents();
+    }
+
+      
+  	
+   	,callback,
        error : function(jqXHR, textStatus, errorThrown) {
        			alert('error: ' + textStatus);
        		}
@@ -40,9 +61,32 @@ function profile() {
         });
      }
  }
+ function postEvent(label,date,prix,participants){
+	postEventGeneric(label,date,prix,participants, 'v1/events/')
+
+}
+
+function postEventGeneric(label,date,price,participants,url){
+	$.ajax({
+		type : 'POST',
+		contentType : 'application/json',
+		url : url,
+		dataType : "json",
+		data : JSON.stringify({
+			"label" : label,
+			"date" : date,
+			"price" : price,
+			"participants" : participants,
+			"id" : 0
+		}),
+
+	});
+
+}
+
 
 function postUser(name, alias, email, pwd) {
-    postUserGeneric(name, alias, email, pwd, 'v1/tempo/user/')
+    postUserGeneric(name, alias, email, pwd, 'v1/user/')
 }
 
 function postUserGeneric(name, alias, email, pwd, url) {
@@ -53,12 +97,14 @@ function postUserGeneric(name, alias, email, pwd, url) {
 		url : url,
 		dataType : "json",
 		data : JSON.stringify({
-			"nom" : name,
-			"prenom" : alias,
-			"login" : email,
-			"pass" : pwd
+			"name" : name,
+			"alias" : alias,
+			"email" : email,
+			"password" : pwd,
+			"id" : 0
 		}),
 		success : function(data, textStatus, jqXHR) {
+			$("#formE").reset();
 			afficheUser(data);
 		},
 		error : function(jqXHR, textStatus, errorThrown) {
@@ -79,7 +125,7 @@ function listUsersGeneric(url) {
 
 function afficheUser(data) {
 	console.log(data);
-	$("#reponse").html(userStringify(data));
+	//$("#reponse").html(userStringify(data));
 }
 
 function afficheListUsers(data) {
@@ -96,5 +142,42 @@ function afficheListUsers(data) {
 }
 
 function userStringify(user) {
-    return user.uno + ". " + user.nom + " &lt;" + user.login + "&gt;" + " (" + user.prenom + ")";
+    return user.uno + ". " + user.nom + " &lt;" + user.login + "&gt;" 
+    + " (" + user.prenom + ")";
+}
+
+function listerEvents(){
+	$.ajax({
+    // The URL for the request
+    url: "/v1/events",
+
+    // Whether this is a POST/GET/UPDATE/DELETE request
+    type: "GET",
+    // The type of data we expect back
+    dataType : "json",
+    // Code to run if the request succeeds;
+    // the response is passed to the function
+    success: function( json ) {
+    
+        $('#eventboard').children("li").remove();
+       
+		$.each(json, function(i,event){
+			$('#eventboard').append("<li>" + event.label + " Nombre de de participants: "+ event.participants+" Prix: "+ event.price +" Date :"+event.date  +"</li>");
+        });
+        
+    },
+    // Code to run if the request fails; the raw request and
+    // status codes are passed to the function
+    error: function( xhr, status, errorThrown ) {
+        alert( "Erreur dans l'affichage des livres" );
+        console.log( "Error: " + errorThrown );
+        console.log( "Status: " + status );
+        console.dir( xhr );
+    },
+    // Code to run regardless of success or failure
+    complete: function( xhr, status ) {
+        /*alert( "The request is complete!" );*/
+    }
+  });
+
 }

@@ -22,79 +22,85 @@
 
 
 
-    <!--  Div de la page d'identification de l'utilisateur   -->
-    <div id=pageIdentifier >
-      <img id=logo src="Images/Sport-In Logo.png"/>
-      <form id=formI>
-	<input type="text" id="Inom" placeholder="Votre email"/>
-	<input type="password" id="Imdp" placeholder="Votre mot de passe "/>
-      </form>
-      <p id=reponse>reponse: </p>
-      <input type=button id=confirmerI  value="C'est parti">
-      <a href="" id=rI>Retour</a>
-    </div>
+    		<!--  Div de la page d'identification de l'utilisateur   -->
+      <div id=pageIdentifier >
+	<img id=logo src="Images/Sport-In Logo.png"/>
+	<form id=formI>
+	  <input type="text" id="userlogin" placeholder="Votre email"/>
+	  <input type="password" id="passwdlogin" placeholder="Votre mot de passe "/>
+	</form>
+	<input type=button id=confirmerI  value="C'est parti">
+	<a href="" id=rI>Retour</a>
+      </div>
 
-    <!--  Div de la page d'enregistrement d'un utilisateur   -->
-    <div id=pageEnregistrer >
-      <img id=logo src="Images/Sport-In Logo.png"/>
-      <form id=formE>
-		<input type="text" id="Enom" placeholder="Votre email"/>
-		<input type="text" id="nom" placeholder="Votre nom"/>
-		<input type="text" id="prenom" placeholder="Votre prénom"/>
-		<input type="pass" id="Emdp" placeholder="Votre mot de passe"/>
-      </form>
-      <input type=button id=confirmerE  value="C'est parti !">
-      <a href="" id=rE>Retour</a>
-    </div>
-
-    <div id=Accueil>
-		<div id=Menu>
-			<img id=logo2 src="Images/Sport-In LogoB.png"/>
-			<input id=profil type=button value="Mon Profil">
-			<input id=programme type=button value="Mon Programme">
-			<input id=eventdispo type=button value="Rencontres sportives">
-			<input id=settings type=button value="Reglages">
-		</div>
-	<div id=switch>
-		<div id= titre1>Mon profil
-				
-		</div>
-		<div id= titre2>Mon Programme<input id=creerevent1 type=button value="Creer un evenement +"/>
-				
-		</div>	
-		<div id= titre3>Rencontres Sportives<input id=creerevent2 type=button value="Creer un evenement +"/>
-
-		</div>	
-		<div id= titre4>Réglages
-
-		</div>		
+      <!--  Div de la page d'enregistrement d'un utilisateur   -->
+      <div id=pageEnregistrer >
+	<img id=logo src="Images/Sport-In Logo.png"/>
+	<form id=formE>
+	  <input type="text" id="email" placeholder="Votre email"/>
+	  <input type="text" id="nom" placeholder="Votre nom"/>
+	  <input type="text" id="prenom" placeholder="Votre prénom"/>
+	  <input type="pass" id="passwd" placeholder="Votre mot de passe"/>
+	</form>
+	<input type=button id=confirmerE  value="C'est parti !">
+	<a href="" id=rE>Retour</a>
+	
+      </div>
+      <div id=Accueil>
+	<div id=Menu>
+	  <img id=logo2 src="Images/Sport-In LogoB.png"/>
+	  <input id=profil type=button value="Mon Profil">
+	  <input id=programme type=button value="Mon Programme">
+	  <input id=eventdispo type=button value="Rencontres sportives">
+	  <input id=settings type=button value="Reglages">
 	</div>
+	<div id=switch>
+	  <div id= titre1>Mon profil
+	    
+	  </div>
+	  <div id= titre2>Mon Programme<input id=creerevent1 type=button value="Creer un evenement +"/>
+	    
+	  </div>	
+	  <div id= titre3>Rencontres Sportives<input id=creerevent2 type=button value="Creer un evenement +"/>
+
+	  </div>	
+	  <div id= titre4>Réglages
+
+	  </div>		
+	</div>
+			<!-- Div formulaire CreerEvenement -->
 	<div id=creerevent>
-		ICI BIENTOT LE FORMULAIRE DE CREATION D EVENEMENT
+	 <form id=formEvent>
+	  <input type="text" id="label" placeholder="Nom de votre événement"/>
+	  <input type="datetime-local" id="date" placeholder="Date de l'événement:"/>
+	  <input type="number" id="prix" placeholder="Prix de la participation"/>
+	  <input type="number" id="participants" placeholder="Le nombre de participant requis"/>*
+	  <input type=button id="creerEventButton" value="Valider">
+	</form>
 	</div>
 	<div id=eventboard>
-		ICI SERA AFFICHE TOUS LES EVENEMENTS
+	  ICI SERA AFFICHE TOUS LES EVENEMENTS
 	</div>
 	<div id=pageprofil>
-		<input type=text readonly="readonly" div=nom value="NOM">
-		<input type=text readonly="readonly" div=prenom value="PRENOM">
-		<input type=text readonly="readonly" div=job value="JOB">
-		<input type=text readonly="readonly" div=entreprise value="ENTREPRISE">
-		<input div=linkdin type=text placeholder="Liez votre profil Linkdin">
-		<input div=uploadlinkd type=button value="Upload">
+	  <input type=text readonly="readonly" div=nom value="NOM">
+	  <input type=text readonly="readonly" div=prenom value="PRENOM">
+	  <input type=text readonly="readonly" div=job value="JOB">
+	  <input type=text readonly="readonly" div=entreprise value="ENTREPRISE">
+	  <input div=linkdin type=text placeholder="Liez votre profil Linkdin">
+	  <input div=uploadlinkd type=button value="Upload">
 	</div>
 	<div id=pagereglage>
-		ICI LES SETTINGS
+	  ICI LES SETTINGS
 	</div>
 
-</div>
+      </div>
 
 
 
 
-     <script src="./src/Accueil.js"></script>
-    <script src="./src/page1.js"></script>
-    <script src="./src/all.js"></script>
+      <script src="./src/Accueil.js"></script>
+      <script src="./src/page1.js"></script>
+      <script src="./src/all.js"></script>
   </body>
 </html>
 

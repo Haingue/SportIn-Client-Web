@@ -5,6 +5,14 @@ $(document).ready(function(){
     $("#Accueil").hide();
 
 
+
+    //Fonction transition
+    function transitionId(){
+    $("#page1").hide();
+    $("#Acceuil").hide();
+    $("#pageIdentifier").show();
+    }
+
     // TRANSITION PAGE ENREGISTREMENT
     $("#enregistrer").click(function(){
 	$("#page1").hide();
@@ -13,50 +21,38 @@ $(document).ready(function(){
 
     // TRANSITION PAGE IDENTIFICATION
     $("#identifier").click(function(){
-	$("#page1").hide();
-     $("#Acceuil").hide();
-	$("#pageIdentifier").show();			
+	transitionId();			
     });
 
 
+    $("#creerEventButton").click(function(){
+        postEvent(
+            $("#label").val(),
+            $("#date").val(),
+            $("#prix").val(),
+            $("#participants").val(),
+            )
+    });
     
     // Inscription
     $("#confirmerE").click(function(){
 	postUser(
             $('#nom').val(),
-            $('#prenom').val(),
-            $('#Enom').val(),
-            $('#Emdp').val())
+            $('#prenom').val(),   
+            $('#email').val(),
+            $('#passwd').val()
+            )
+        $("#pageEnregistrer").hide();
+        $("#page1").hide();
+        $("#Acceuil").hide();
+        $("#pageIdentifier").show();
+
+
 	});
 	
 	// Identification
 	$("#confirmerI").click(function(){
-		login();
-    $("#Accueil").show();
-    $("#switch").show();
-    $("#titre3").show();
-    $("#eventboard").show();
-    $("#Menu").show();
-    $("#logo2").show();
-    $("#profil").show();
-    $("#programme").show();
-    $("#eventdispo").show();
-    $("#settings").show();
-    
-
-    $("#bordgauche").hide();
-    $("#borddroit").hide();
-    $("#pageEnregistrer").hide();   
-    $("#pageIdentifier").hide();
-    $("#confirmer").hide();
-    $("#profilpage").hide();
-    $("#titre1").hide();
-    $("#titre2").hide();
-    $("#titre4").hide();
-    $("#creerevent").hide();
-    $("#pageprofil").hide();
-    $("#pagereglage").hide();
-
+		login()
 	});
     $("#profil").click(function(){
         $("#titre1").show();
@@ -76,7 +72,8 @@ $(document).ready(function(){
         $("#eventboard").show();
         $("#creerevent").hide();
         $("#pageprofil").hide();
-        $("#pagereglage").hide();       
+        $("#pagereglage").hide();
+        listerEvents();        
     });
     $("#eventdispo").click(function(){
         $("#titre1").hide();
@@ -86,7 +83,8 @@ $(document).ready(function(){
         $("#eventboard").show();
         $("#creerevent").hide();
         $("#pageprofil").hide();
-        $("#pagereglage").hide();       
+        $("#pagereglage").hide();
+        listerEvents();       
     });
     $("#settings").click(function(){
         $("#titre1").hide();
